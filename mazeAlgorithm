@@ -2,13 +2,19 @@ public abstract class mazeAlgorithm {
 
     protected MazeCell[,] mazeCells;
     protected int mazeRows, mazeColumns;
+    protected GameObject wall;
+    protected float size;
 
-    protected mazeAlgorithm(MazeCell[,] mazeCells) : base()
+    protected mazeAlgorithm(MazeCell[,] mazeCells, GameObject wall, float size) : base()
     {
         this.mazeCells = mazeCells;
         mazeRows = mazeCells.GetLength(0);
         mazeColumns = mazeCells.GetLength(1);
+        this.size = size;
+        this.wall = wall;
     }
+    
+    public abstract void Initialise();
 
     public abstract void CreateMaze();
 }
