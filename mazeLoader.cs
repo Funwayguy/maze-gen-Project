@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class mazeLoader : MonoBehaviour {
     public int mazeRows, mazeColumns;
     public GameObject wall;
@@ -6,7 +8,7 @@ public class mazeLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mazeAlgorithm ma = new huntAndKillMazeAlgorithm (mazeRows, mazeColumns, wall, size);
-        ma.InitializeMaze();
+        ma.Initialise();
         ma.CreateMaze();
 	}
 	

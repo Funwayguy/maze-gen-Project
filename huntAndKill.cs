@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class huntAndKillMazeAlgorithm : mazeAlgorithm {
     protected MazeCell[,] mazeCells;
     protected int mazeRows, mazeColumns;
@@ -18,7 +20,7 @@ public class huntAndKillMazeAlgorithm : mazeAlgorithm {
         this.wall = wall;
     }
     
-    private void Initialise()
+    public void Initialise()
     {
         for (int r = 0; r < mazeRows; r++)
         {
@@ -53,7 +55,7 @@ public class huntAndKillMazeAlgorithm : mazeAlgorithm {
         }
     }
     
-    public override void CreateMaze()
+    public void CreateMaze()
     {
         HuntAndKill();
     }

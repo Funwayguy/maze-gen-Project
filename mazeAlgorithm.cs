@@ -1,10 +1,13 @@
-public interface mazeAlgorithm {
+using UnityEngine;
+
+public interface mazeAlgorithm
+{
     void Initialise();
     void CreateMaze();
     
     MazeCell[,] getCells();
     int getRows();
-    int getColumns;
+    int getColumns();
     float getWallSize();
     GameObject getWallObject();
 }
