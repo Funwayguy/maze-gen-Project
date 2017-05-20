@@ -1,13 +1,21 @@
 public class huntAndKillMazeAlgorithm : mazeAlgorithm {
-
+    protected MazeCell[,] mazeCells;
+    protected int mazeRows, mazeColumns;
+    protected GameObject wall;
+    protected float size;
+    
     private int currentRow = 0;
     private int currentColumn = 0;
 
     private bool courseComplete = false;
 
-    public huntAndKillMazeAlgorithm(MazeCell[,] mazeCells) : base(mazeCells)
+    public huntAndKillMazeAlgorithm(MazeCell[,] mazeCells, GameObject wall, float size)
     {
-
+        this.mazeCells = mazeCells;
+        mazeRows = mazeCells.GetLength(0);
+        mazeColumns = mazeCells.GetLength(1);
+        this.size = size;
+        this.wall = wall;
     }
     
     private void Initialise()
@@ -226,5 +234,30 @@ private void DestroyWallIfItExists(GameObject wall)
         }
         //return if there are adjecent cells
         return visitedCells > 0;
+    }
+    
+    public MazeCell[,] getCells()
+    {
+        return mazeCells;
+    }
+    
+    public int getRows()
+    {
+        return mazeRows;
+    }
+    
+    public int getColumns()
+    {
+        return mazeColumns;
+    }
+    
+    public float getWallSize()
+    {
+        return size;
+    }
+    
+    public GameObject getWallObject()
+    {
+        return wall;
     }
 }
