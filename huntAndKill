@@ -9,19 +9,17 @@ public class huntAndKillMazeAlgorithm : mazeAlgorithm {
 
     private bool courseComplete = false;
 
-    public huntAndKillMazeAlgorithm(MazeCell[,] mazeCells, GameObject wall, float size)
+    public huntAndKillMazeAlgorithm(int mazeRows, int mazeColumns, GameObject wall, float size)
     {
-        this.mazeCells = mazeCells;
-        mazeRows = mazeCells.GetLength(0);
-        mazeColumns = mazeCells.GetLength(1);
+        this.mazeCells = new MazeCell[mazeRows, mazeColumns];
+        this.mazeRows = mazeRows;
+        this.mazeColumns = mazeColumns;
         this.size = size;
         this.wall = wall;
     }
     
     private void Initialise()
     {
-        mazeCells = new MazeCell[mazeRows, mazeColumns];
-
         for (int r = 0; r < mazeRows; r++)
         {
             for (int c = 0; c < mazeColumns; c++)

@@ -3,11 +3,9 @@ public class mazeLoader : MonoBehaviour {
     public GameObject wall;
     public float size = 2f;
 
-    private MazeCell[,] mazeCells;
-
 	// Use this for initialization
 	void Start () {
-        mazeAlgorithm ma = new huntAndKillMazeAlgorithm (mazeCells, wall, size);
+        mazeAlgorithm ma = new huntAndKillMazeAlgorithm (mazeRows, mazeColumns, wall, size);
         ma.InitializeMaze();
         ma.CreateMaze();
 	}
